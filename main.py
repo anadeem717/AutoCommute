@@ -1,3 +1,9 @@
+'''
+Areesh Nadeem
+Auto Commmute Planner Project
+    - Calculates distance and duration of commute from home to school. 
+    - Can be automated by a task scheduler on a computer. 
+'''
 
 import googlemaps
 from twilio.rest import Client
@@ -10,6 +16,7 @@ twilioAuthToken = 'XXXXXXXXXXXXXXXXXXXXXX'
 twilioPhone = '+12223334567'
 
 # opens the file containing the maps API, reads it, then closes the file. 
+# API key is read from a separate file to ensure security. 
 API = open("GoogleMapsAPI.txt", "r")
 APIKey = API.read().strip() 
 API.close() 
@@ -31,7 +38,6 @@ directions = gmaps.directions(home, school, mode=mode)
 
 # if directions are successfully obtained:
 if directions:
-
     route = directions[0]['legs'][0] 
 
     # distance in miles from start to end destination.
@@ -52,7 +58,7 @@ if directions:
         from_=twilioPhone,
         to=userPhone
     )
-
+    
     print("Message sent successfully.")
 else:
     print("API fail or no routes avaliable.")
