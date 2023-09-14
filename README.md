@@ -10,5 +10,5 @@ Before you can run the program, you'll need to set up a few things:
 
 2. **Twilio Account:** Create a Twilio account if you don't already have one. You'll need your Twilio Account SID, Auth Token, and phone number to paste into the program.
 
-3. To automate this at a specific time/day, you can run this on a task scheduler on a computer. 
+3. To automate this at a specific time/day, you can run this program on a task scheduler on a computer. 
 
